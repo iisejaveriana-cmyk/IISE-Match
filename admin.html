@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IISE Match - Admin Dashboard</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="admin.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div id="login-gate" class="glass-panel" style="text-align: center;">
+    <div style="margin-bottom: 1rem;">
+      <img src="logo.png" alt="Logo IISE 771" style="height: 60px; background: white; padding: 6px 16px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    </div>
+    <h2>Admin Login</h2>
+    <p style="margin-bottom: 1rem;">Ingrese la contraseña para ver los datos</p>
+    <input type="password" id="admin-password" placeholder="Contraseña">
+    <button id="login-btn" class="btn btn-primary">Ingresar</button>
+  </div>
+
+  <div id="dashboard-content">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+      <img src="logo.png" alt="Logo IISE 771" style="height: 50px; background: white; padding: 4px 12px; border-radius: 10px;">
+      <h1 style="margin: 0;">Dashboard de Resultados</h1>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card glass-panel">
+        <h3>Total Usuarios</h3>
+        <div id="total-users" class="stat-value">0</div>
+      </div>
+      <div class="stat-card glass-panel">
+        <h3>Perfil Dominante</h3>
+        <div id="top-profile" class="stat-value" style="font-size: 1.5rem;">-</div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card glass-panel">
+        <h3>Distribución de Perfiles</h3>
+        <canvas id="chart-profiles"></canvas>
+      </div>
+      <div class="chart-card glass-panel">
+        <h3>Niveles de Experiencia</h3>
+        <canvas id="chart-levels"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="profiles.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
